@@ -1,5 +1,8 @@
 package main
 
+// По мотивам https://github.com/nickelandcopper/HartreeFockPythonProgram/blob/main/Hartree_Fock_Program.ipynb
+// По мотивам https://www.youtube.com/watch?v=eDAfpQIMde0&list=PL-hN8vfRaU7jSFHN1ZSAMNe_2nXhwAmzM
+
 import (
 	_ "encoding/csv"
 	"fmt"
