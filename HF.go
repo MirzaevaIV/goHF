@@ -250,7 +250,7 @@ func E_nn(a_list []atom) float64 {
 	res := 0.0
 	for i := range a_list {
 		for j := 0; j < i; j++ {
-			res += float64(a_list[i].Z) * float64(a_list[i].Z) / math.Sqrt(math.Pow(a_list[i].Coords[0]-a_list[j].Coords[0], 2)+math.Pow(a_list[i].Coords[1]-a_list[j].Coords[1], 2)+math.Pow(a_list[i].Coords[2]-a_list[j].Coords[2], 2))
+			res += float64(a_list[i].Z) * float64(a_list[j].Z) / math.Sqrt(math.Pow(a_list[i].Coords[0]-a_list[j].Coords[0], 2)+math.Pow(a_list[i].Coords[1]-a_list[j].Coords[1], 2)+math.Pow(a_list[i].Coords[2]-a_list[j].Coords[2], 2))
 		}
 	}
 	return res
