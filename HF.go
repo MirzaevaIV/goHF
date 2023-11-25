@@ -346,7 +346,7 @@ func compute_density_mat(MOs [][]float64, N_occ int) [][]float64 {
 			for oo := 0; oo < N_occ; oo++ {
 				C := MOs[i][oo]
 				C_dag := MOs[j][oo]
-				res[i][j] = occ * C * C_dag
+				res[i][j] += occ * C * C_dag
 			}
 		}
 	}
