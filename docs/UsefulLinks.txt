@@ -1,0 +1,8 @@
+https://blog.marlin.org/cgo-referencing-c-library-in-go
+https://karthikkaranth.me/blog/calling-c-code-from-go/
+
+https://github.com/psi4/psi4numpy/blob/master/Tutorials/03_Hartree-Fock/3b_rhf-diis.ipynb
+
+https://psicode.org/psi4manual/master/api/psi4.driver.energy.html#psi4.driver.energy
+
+http://vergil.chemistry.gatech.edu/notes/index.html

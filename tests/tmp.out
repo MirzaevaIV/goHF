@@ -1,0 +1,75 @@
+INFO: 2024/01/13 02:18:02 Starting goHF...
+
+              __  __  ____      |
+             /\ \/\ \/\  __\    | Author: Mirzaeva Irina Valerievna
+   __     ___\ \ \_\ \ \ \_/    | email: dairdre@gmail.com
+ /'_ `\  / __`\ \  _  \ \  _\   | Nikolaev Institute of Inorganic Chemistry SB RAS (http://niic.nsc.ru/)
+/\ \L\ \/\ \L\ \ \ \ \ \ \ \/   | Novosibirsk, Russia
+\ \____ \ \____/\ \_\ \_\ \_\   | HF stands for Himicheskaya Fizika
+ \/___L\ \/___/  \/_/\/_/\/_/   | Have Fun!!!
+   /\____/                      |
+   \_/__/                       |
+
+
+WARNING: 2024/01/13 02:18:02 This is an experimental program on an early stage of development.
+
+
+Input file content:
+----------------------------------------------------------------------
+Atoms
+    Cl   0.0000  0.0000  0.0000
+    H  0.0000  0.0000  2.2
+End
+
+Basis
+    aug-cc-pvqz
+End
+
+----------------------------------------------------------------------
+Atoms block found at lines 0 -- 3.
+Basis block found.    aug-cc-pvqz
+1 Basis for atom  Cl1 :  # (52s,26p,4d,3f,2g) -> [7s,6p,4d,3f,2g]
+2 Basis for atom  H2 :  # (10s,4p,3d,2f) -> [5s,4p,3d,2f]
+Initial energy =  -434.2700264276933  a.u.
+Iteration  0 . Energy =  -434.2700264276933 , dE =  434.2700264276933
+Iteration  1 . Energy =  -447.04697023604865 , dE =  12.776943808355327
+Iteration  2 . Energy =  -456.5709890467862 , dE =  9.524018810737573
+Iteration  3 . Energy =  -453.9932823189292 , dE =  -2.5777067278570485
+Iteration  4 . Energy =  -458.05987425370364 , dE =  4.066591934774465
+Iteration  5 . Energy =  -455.383283065503 , dE =  -2.676591188200632
+Iteration  6 . Energy =  -458.36937881895295 , dE =  2.986095753449945
+Iteration  7 . Energy =  -456.19949790156556 , dE =  -2.1698809173873883
+Iteration  8 . Energy =  -458.5845922454003 , dE =  2.385094343834737
+Iteration  9 . Energy =  -458.11891003537147 , dE =  -0.4656822100288309
+Iteration  10 . Energy =  -459.1033974960491 , dE =  0.9844874606776557
+Iteration  11 . Energy =  -458.951660855508 , dE =  -0.15173664054111669
+Iteration  12 . Energy =  -459.41508705672095 , dE =  0.46342620121293976
+Iteration  13 . Energy =  -459.40121794208693 , dE =  -0.013869114634019297
+Iteration  14 . Energy =  -459.664692616515 , dE =  0.263474674428096
+Iteration  15 . Energy =  -459.74745684731494 , dE =  0.08276423079990991
+Iteration  16 . Energy =  -459.86344110550255 , dE =  0.11598425818760916
+Iteration  17 . Energy =  -459.9119791318694 , dE =  0.04853802636682758
+Iteration  18 . Energy =  -459.93884870976467 , dE =  0.026869577895297425
+Iteration  19 . Energy =  -459.9488594055566 , dE =  0.01001069579194791
+Iteration  20 . Energy =  -459.9528769524455 , dE =  0.004017546888860579
+Iteration  21 . Energy =  -459.9543095213832 , dE =  0.0014325689377301387
+Iteration  22 . Energy =  -459.9548384600286 , dE =  0.000528938645402377
+Iteration  23 . Energy =  -459.95502697692046 , dE =  0.00018851689185339637
+Iteration  24 . Energy =  -459.9550951989537 , dE =  6.822203323508802e-05
+Iteration  25 . Energy =  -459.95511960982117 , dE =  2.441086746785004e-05
+Iteration  26 . Energy =  -459.95512839722426 , dE =  8.787403089627333e-06
+Iteration  27 . Energy =  -459.9551315484347 , dE =  3.1512104214925785e-06
+Iteration  28 . Energy =  -459.95513268104355 , dE =  1.1326088724672445e-06
+Iteration  29 . Energy =  -459.95513308758626 , dE =  4.065427106070274e-07
+Iteration  30 . Energy =  -459.95513323363843 , dE =  1.4605217302232631e-07
+Iteration  31 . Energy =  -459.95513328607825 , dE =  5.243981604508008e-08
+Iteration  32 . Energy =  -459.9551333049148 , dE =  1.8836544768419117e-08
+Iteration  33 . Energy =  -459.9551333116833 , dE =  6.768516414012993e-09
+SCF converged after step  33
+Nuclei Repulsion Energy:  4.089096611831817  a.u.
+----------------------------------------------------------------------
+Final total energy =  -459.9551333116833  a.u.
+----------------------------------------------------------------------
+
+
+INFO: 2024/01/13 02:19:02 Exiting goHF...
