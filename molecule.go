@@ -54,7 +54,7 @@ func (m *Molecule) getBasis(bName string) {
 		for j, str := range data {
 			words := strings.Fields(str)
 			if len(words) > 1 {
-				if words[1] == strings.ToUpper(ElemData.Symb[atm.Z]) {
+				if (len(words[0])>2) && (words[1] == strings.ToUpper(ElemData.Symb[atm.Z])) {
 					OutputLogger.Println(i+1, "Basis for atom ", atm.Name, ": ", data[j+1])
 					m.Atoms[i].getBasis(data, j+2)
 				}
