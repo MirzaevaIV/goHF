@@ -1,0 +1,220 @@
+INFO: 2024/06/13 12:28:15 Starting goHF...
+
+              __  __  ____      |
+             /\ \/\ \/\  __\    | Author: Mirzaeva Irina Valerievna
+   __     ___\ \ \_\ \ \ \_/    | email: dairdre@gmail.com
+ /'_ `\  / __`\ \  _  \ \  _\   | Nikolaev Institute of Inorganic Chemistry SB RAS (http://niic.nsc.ru/)
+/\ \L\ \/\ \L\ \ \ \ \ \ \ \/   | Novosibirsk, Russia
+\ \____ \ \____/\ \_\ \_\ \_\   | HF stands for Himicheskaya Fizika
+ \/___L\ \/___/  \/_/\/_/\/_/   | Have Fun!!!
+   /\____/                      |
+   \_/__/                       |
+
+
+WARNING: 2024/06/13 12:28:15 This is an experimental program on an early stage of development.
+
+
+Input file content:
+----------------------------------------------------------------------
+Nprocs 4
+
+Atoms
+   F   0.0000  0.0000  0.0000
+   F  0.0000  0.0000  2.1
+End
+
+Basis
+    aug-cc-pvdz
+End
+
+----------------------------------------------------------------------
+Parsing input. Number of threads set to 4.
+Parsing input. Atoms block found at lines 2 -- 5.
+Parsing input. Basis block found.    aug-cc-pvdz
+1 Basis for atom  F1 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+2 Basis for atom  F2 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+INFO: 2024/06/13 12:28:15 ***NAO =  46 , NPrims =  96
+INFO: 2024/06/13 12:28:15 1e integrals done...
+INFO: 2024/06/13 12:28:15 1e integrals done... 1.129032ms
+INFO: 2024/06/13 12:28:15 2e integrals done... 75.604828ms
+Iteration  1 . Energy =  -188.9368497176285 , dE =  188.9368497176285 , dRMS =  0.08944228032787693
+Iteration  2 . Energy =  -186.01954598601017 , dE =  -2.9173037316183184 , dRMS =  0.08611218552500906
+Iteration  3 . Energy =  -198.12195899567521 , dE =  12.102413009665042 , dRMS =  0.024132091923417805
+Iteration  4 . Energy =  -198.5204822107197 , dE =  0.3985232150444915 , dRMS =  0.0053087918182420455
+Iteration  5 . Energy =  -198.54300621233824 , dE =  0.022524001618535294 , dRMS =  0.0005200674150251572
+Iteration  6 . Energy =  -198.54320850688444 , dE =  0.00020229454619880016 , dRMS =  9.257162994220055e-05
+Iteration  7 . Energy =  -198.54322505900797 , dE =  1.6552123526025753e-05 , dRMS =  2.2188753106392015e-05
+Iteration  8 . Energy =  -198.5432259866693 , dE =  9.276613468500727e-07 , dRMS =  1.859808557537125e-06
+SCF converged after step  8
+Nuclei Repulsion Energy:  20.41112090275714  a.u.
+----------------------------------------------------------------------
+Final total energy =  -198.5432259866693  a.u.
+----------------------------------------------------------------------
+
+
+INFO: 2024/06/13 12:28:15 Exiting goHF...
+INFO: 2024/06/13 12:30:02 Starting goHF...
+
+              __  __  ____      |
+             /\ \/\ \/\  __\    | Author: Mirzaeva Irina Valerievna
+   __     ___\ \ \_\ \ \ \_/    | email: dairdre@gmail.com
+ /'_ `\  / __`\ \  _  \ \  _\   | Nikolaev Institute of Inorganic Chemistry SB RAS (http://niic.nsc.ru/)
+/\ \L\ \/\ \L\ \ \ \ \ \ \ \/   | Novosibirsk, Russia
+\ \____ \ \____/\ \_\ \_\ \_\   | HF stands for Himicheskaya Fizika
+ \/___L\ \/___/  \/_/\/_/\/_/   | Have Fun!!!
+   /\____/                      |
+   \_/__/                       |
+
+
+WARNING: 2024/06/13 12:30:02 This is an experimental program on an early stage of development.
+
+
+Input file content:
+----------------------------------------------------------------------
+Nprocs 8
+
+Atoms
+   F   0.0000  0.0000  0.0000
+   F  0.0000  0.0000  2.1
+End
+
+Basis
+    aug-cc-pvdz
+End
+
+----------------------------------------------------------------------
+Parsing input. Number of threads set to 8.
+Parsing input. Atoms block found at lines 2 -- 5.
+Parsing input. Basis block found.    aug-cc-pvdz
+1 Basis for atom  F1 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+2 Basis for atom  F2 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+INFO: 2024/06/13 12:30:02 ***NAO =  46 , NPrims =  96
+INFO: 2024/06/13 12:30:02 1e integrals done...
+INFO: 2024/06/13 12:30:02 1e integrals done... 1.007711ms
+INFO: 2024/06/13 12:30:02 2e integrals done... 51.4097ms
+Iteration  1 . Energy =  -188.93684971762846 , dE =  188.93684971762846 , dRMS =  0.08944228032787674
+Iteration  2 . Energy =  -186.0195459860104 , dE =  -2.9173037316180626 , dRMS =  0.08611218552500848
+Iteration  3 . Energy =  -198.1219589956758 , dE =  12.102413009665412 , dRMS =  0.024132091923416678
+Iteration  4 . Energy =  -198.5204822107196 , dE =  0.39852321504378097 , dRMS =  0.00530879181824137
+Iteration  5 . Energy =  -198.54300621233824 , dE =  0.02252400161864898 , dRMS =  0.0005200674150249235
+Iteration  6 . Energy =  -198.54320850688498 , dE =  0.00020229454673881264 , dRMS =  9.25716299422622e-05
+Iteration  7 . Energy =  -198.54322505900794 , dE =  1.6552122957591564e-05 , dRMS =  2.218875310666398e-05
+Iteration  8 . Energy =  -198.54322598666886 , dE =  9.276609205244313e-07 , dRMS =  1.8598085575512037e-06
+SCF converged after step  8
+Nuclei Repulsion Energy:  20.41112090275714  a.u.
+----------------------------------------------------------------------
+Final total energy =  -198.54322598666886  a.u.
+----------------------------------------------------------------------
+
+
+INFO: 2024/06/13 12:30:02 Exiting goHF...
+INFO: 2024/06/13 12:34:34 Starting goHF...
+
+              __  __  ____      |
+             /\ \/\ \/\  __\    | Author: Mirzaeva Irina Valerievna
+   __     ___\ \ \_\ \ \ \_/    | email: dairdre@gmail.com
+ /'_ `\  / __`\ \  _  \ \  _\   | Nikolaev Institute of Inorganic Chemistry SB RAS (http://niic.nsc.ru/)
+/\ \L\ \/\ \L\ \ \ \ \ \ \ \/   | Novosibirsk, Russia
+\ \____ \ \____/\ \_\ \_\ \_\   | HF stands for Himicheskaya Fizika
+ \/___L\ \/___/  \/_/\/_/\/_/   | Have Fun!!!
+   /\____/                      |
+   \_/__/                       |
+
+
+WARNING: 2024/06/13 12:34:34 This is an experimental program on an early stage of development.
+
+
+Input file content:
+----------------------------------------------------------------------
+Nprocs 1
+
+Atoms
+   F   0.0000  0.0000  0.0000
+   F  0.0000  0.0000  2.1
+End
+
+Basis
+    aug-cc-pvdz
+End
+
+----------------------------------------------------------------------
+Parsing input. Number of threads set to 1.
+Parsing input. Atoms block found at lines 2 -- 5.
+Parsing input. Basis block found.    aug-cc-pvdz
+1 Basis for atom  F1 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+2 Basis for atom  F2 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+INFO: 2024/06/13 12:34:34 ***NAO =  46 , NPrims =  96
+INFO: 2024/06/13 12:34:34 1e integrals done...
+INFO: 2024/06/13 12:34:34 1e integrals done... 1.692684ms
+INFO: 2024/06/13 12:34:35 2e integrals done... 258.315437ms
+Iteration  1 . Energy =  -188.93684971762843 , dE =  188.93684971762843 , dRMS =  0.0894422803278746
+Iteration  2 . Energy =  -186.01954598600952 , dE =  -2.917303731618915 , dRMS =  0.08611218552500774
+Iteration  3 . Energy =  -198.12195899567573 , dE =  12.102413009666208 , dRMS =  0.024132091923417327
+Iteration  4 . Energy =  -198.5204822107198 , dE =  0.3985232150440652 , dRMS =  0.00530879181824131
+Iteration  5 . Energy =  -198.54300621233804 , dE =  0.022524001618251077 , dRMS =  0.0005200674150244324
+Iteration  6 . Energy =  -198.54320850688455 , dE =  0.00020229454651143897 , dRMS =  9.257162994250443e-05
+Iteration  7 . Energy =  -198.54322505900774 , dE =  1.655212318496524e-05 , dRMS =  2.21887531072812e-05
+Iteration  8 . Energy =  -198.54322598666892 , dE =  9.276611763198161e-07 , dRMS =  1.8598085567446085e-06
+SCF converged after step  8
+Nuclei Repulsion Energy:  20.41112090275714  a.u.
+----------------------------------------------------------------------
+Final total energy =  -198.54322598666892  a.u.
+----------------------------------------------------------------------
+
+
+INFO: 2024/06/13 12:34:35 Exiting goHF...
+INFO: 2024/06/13 12:35:40 Starting goHF...
+
+              __  __  ____      |
+             /\ \/\ \/\  __\    | Author: Mirzaeva Irina Valerievna
+   __     ___\ \ \_\ \ \ \_/    | email: dairdre@gmail.com
+ /'_ `\  / __`\ \  _  \ \  _\   | Nikolaev Institute of Inorganic Chemistry SB RAS (http://niic.nsc.ru/)
+/\ \L\ \/\ \L\ \ \ \ \ \ \ \/   | Novosibirsk, Russia
+\ \____ \ \____/\ \_\ \_\ \_\   | HF stands for Himicheskaya Fizika
+ \/___L\ \/___/  \/_/\/_/\/_/   | Have Fun!!!
+   /\____/                      |
+   \_/__/                       |
+
+
+WARNING: 2024/06/13 12:35:40 This is an experimental program on an early stage of development.
+
+
+Input file content:
+----------------------------------------------------------------------
+Nprocs 2
+
+Atoms
+   F   0.0000  0.0000  0.0000
+   F  0.0000  0.0000  2.1
+End
+
+Basis
+    aug-cc-pvdz
+End
+
+----------------------------------------------------------------------
+Parsing input. Number of threads set to 2.
+Parsing input. Atoms block found at lines 2 -- 5.
+Parsing input. Basis block found.    aug-cc-pvdz
+1 Basis for atom  F1 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+2 Basis for atom  F2 (aug-cc-pVDZ) :  # (20s,6p,2d) -> [4s,3p,2d]
+INFO: 2024/06/13 12:35:40 ***NAO =  46 , NPrims =  96
+INFO: 2024/06/13 12:35:40 1e integrals done...
+INFO: 2024/06/13 12:35:40 1e integrals done... 1.329832ms
+INFO: 2024/06/13 12:35:40 2e integrals done... 137.016167ms
+Iteration  1 . Energy =  -188.9368497176287 , dE =  188.9368497176287 , dRMS =  0.08944228032787047
+Iteration  2 . Energy =  -186.01954598601077 , dE =  -2.9173037316179204 , dRMS =  0.08611218552500823
+Iteration  3 . Energy =  -198.12195899567564 , dE =  12.102413009664872 , dRMS =  0.024132091923415363
+Iteration  4 . Energy =  -198.52048221071973 , dE =  0.3985232150440936 , dRMS =  0.005308791818240038
+Iteration  5 . Energy =  -198.54300621233804 , dE =  0.02252400161830792 , dRMS =  0.0005200674150257614
+Iteration  6 . Energy =  -198.54320850688475 , dE =  0.00020229454671039093 , dRMS =  9.257162994281165e-05
+Iteration  7 . Energy =  -198.54322505900714 , dE =  1.6552122389157375e-05 , dRMS =  2.218875310629816e-05
+Iteration  8 . Energy =  -198.543225986669 , dE =  9.276618584408425e-07 , dRMS =  1.8598085563544296e-06
+SCF converged after step  8
+Nuclei Repulsion Energy:  20.41112090275714  a.u.
+----------------------------------------------------------------------
+Final total energy =  -198.543225986669  a.u.
+----------------------------------------------------------------------
+
+
+INFO: 2024/06/13 12:35:40 Exiting goHF...

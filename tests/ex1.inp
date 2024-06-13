@@ -1,0 +1,11 @@
+Nprocs 2
+
+Atoms
+   F   0.0000  0.0000  0.0000
+   F  0.0000  0.0000  2.1
+End
+
+Basis
+    aug-cc-pvdz
+End
+
