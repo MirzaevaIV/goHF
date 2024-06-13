@@ -1,14 +1,15 @@
 // helper.go --  This file is part of goHF project.
 // Mirzaeva Irina, 2023
 //
-//  goHF is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty
-//  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-//  See the GNU General Public License for more details.
+//	goHF is distributed in the hope that it will be useful,
+//	but WITHOUT ANY WARRANTY; without even the implied warranty
+//	of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//	See the GNU General Public License for more details.
 //
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see http://www.gnu.org/licenses/
-//------------------------------------------------
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see http://www.gnu.org/licenses/
+//
+// ------------------------------------------------
 package main
 
 import (
@@ -16,6 +17,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"runtime"
+	_ "runtime/debug"
 	"strconv"
 )
 import (
@@ -103,8 +106,12 @@ func flatten(arr [][]float64) []float64 {
 
 func PrintMat(M [][]float64) {
 	aaa := mat.NewDense(len(M), len(M), flatten(M))
-	fa := mat.Formatted(aaa, mat.Prefix("    "), mat.Squeeze())
-	fmt.Printf("    %.4f\n", fa)
+	PrintDense(aaa)
+}
+
+func PrintDense(D *mat.Dense){
+	fa := mat.Formatted(D, mat.Prefix("    "), mat.Squeeze())
+	fmt.Printf("    %.8f\n", fa)
 }
 
 func MatrixSqrtInverse(S [][]float64) [][]float64 {
@@ -133,4 +140,17 @@ func MatrixSqrtInverse(S [][]float64) [][]float64 {
 		result[i] = SSqrtInv.RawRowView(i)
 	}
 	return result
+}
+
+func MyMemDebug() {
+	fmt.Println("-----------!!!!!!!!Enter MyMemDebug!!!!!!!!--------------")
+	var memStats runtime.MemStats
+
+	runtime.ReadMemStats(&memStats)
+
+	fmt.Printf("Alloc: %d bytes\n", memStats.Alloc)
+	fmt.Printf("TotalAlloc: %d bytes\n", memStats.TotalAlloc)
+	fmt.Printf("HeapAlloc: %d bytes\n", memStats.HeapAlloc)
+	fmt.Printf("HeapSys: %d bytes\n", memStats.HeapSys)
+	fmt.Println("------------------------------------------!--------------")
 }

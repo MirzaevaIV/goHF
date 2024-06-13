@@ -1,17 +1,21 @@
 // molecule.go --  This file is part of goHF project.
 // Mirzaeva Irina, 2023
 //
-//  goHF is distributed in the hope that it will be useful,
-//  but WITHOUT ANY WARRANTY; without even the implied warranty
-//  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-//  See the GNU General Public License for more details.
+//	goHF is distributed in the hope that it will be useful,
+//	but WITHOUT ANY WARRANTY; without even the implied warranty
+//	of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//	See the GNU General Public License for more details.
 //
-//  You should have received a copy of the GNU General Public License
-//  along with this program.  If not, see http://www.gnu.org/licenses/
-//------------------------------------------------
+//	You should have received a copy of the GNU General Public License
+//	along with this program.  If not, see http://www.gnu.org/licenses/
+//
+// ------------------------------------------------
 package main
 
+import "C"
 import (
+	"fmt"
+	"runtime"
 	"strconv"
 	"strings"
 
@@ -19,11 +23,17 @@ import (
 )
 
 type Molecule struct {
-	Atoms      []Atom
-	atm        [][]int
-	bas        [][]int
-	env        []float64
-	nao, Nelec int
+	Atoms                       []Atom
+	atm                         [][]int
+	bas                         [][]int
+	env                         []float64
+	nao, Nelec, NShells, NPrims int
+	Shells                      []int
+	cbas                        [][]C.int
+	catm                        [][]C.int
+	cenv                        []C.double
+	natm                        C.int
+	nbas                        C.int
 }
 
 func (m *Molecule) addAtoms(data []string, start int, end int) {
@@ -54,8 +64,8 @@ func (m *Molecule) getBasis(bName string) {
 		for j, str := range data {
 			words := strings.Fields(str)
 			if len(words) > 1 {
-				if (len(words[0])>2) && (words[1] == strings.ToUpper(ElemData.Symb[atm.Z])) {
-					OutputLogger.Println(i+1, "Basis for atom ", atm.Name, ": ", data[j+1])
+				if (len(words) == 3) && (words[1] == strings.ToUpper(ElemData.Symb[atm.Z])) {
+					OutputLogger.Println(i+1, "Basis for atom ", atm.Name, words[2], ": ", data[j+1])
 					m.Atoms[i].getBasis(data, j+2)
 				}
 			}
@@ -71,6 +81,15 @@ func (m *Molecule) getNelec() int {
 	return result
 }
 
+func (m *Molecule) setNPrims() {
+	m.NPrims = 0
+	for _, a := range m.Atoms {
+		for _, o := range a.Basis {
+			m.NPrims += (2*o.l + 1) * o.nPrim
+		}
+	}
+}
+
 func (m *Molecule) getNShells() int {
 	result := 0
 	for _, a := range m.Atoms {
@@ -83,6 +102,9 @@ func (m *Molecule) buildCINTdata() {
 	m.atm = [][]int{}
 	m.bas = [][]int{}
 	m.env = make([]float64, 20)
+	m.NShells = 0
+	m.Shells = []int{}
+	m.nao = 0
 	ptr_env := 20
 	for _, a := range m.Atoms {
 		m.atm = append(m.atm, []int{a.Z, ptr_env, 0, 0, 0, 0})
@@ -106,42 +128,33 @@ func (m *Molecule) buildCINTdata() {
 			}
 			m.bas = append(m.bas, []int{i, o.l, o.nPrim, 1, 0, ptr_env, ptr_env + o.nPrim, 0})
 			ptr_env += 2 * o.nPrim
+			m.Shells = append(m.Shells, (2*o.l + 1))
 			m.nao += (2*o.l + 1)
 		}
 	}
+	m.NShells = len(m.Shells)
+	m.cbas = CConvertInt(m.bas)
+	m.catm = CConvertInt(m.atm)
+	m.cenv = CConvertDouble(m.env)
+	m.natm = C.int(len(m.atm))
+	m.nbas = C.int(len(m.bas))
 }
 
-func (mol *Molecule) CalculateIntegrals() ([][]float64, [][]float64, [][]float64, [][][][]float64) {
+func (mol *Molecule) CalculateIntegrals_1e() ([][]float64, [][]float64, [][]float64) {
+
 	mol.buildCINTdata()
-	//OutputLogger.Println(mol)
-	//printOutputDelimiter()
+	InfoLogger.Println("***NAO = ", mol.nao, ", NPrims = ", mol.NPrims)
+	fmt.Println("***\n", "NAOs: ", mol.nao, "NPrims: ", mol.NPrims, "\n***")
 
-	//printOutputDelimiter()
-	//OutputLogger.Println("Overlap Integrals: ")
-	//printOutputDelimiter()
 	S := mol.Ovlp()
-	//OutputLogger.Println(S)
-
-	//printOutputDelimiter()
-	//OutputLogger.Println("Kinetic Energy Integrals: ")
-	//printOutputDelimiter()
 	T := mol.Kinetic()
-	//OutputLogger.Println(T)
-
-	//printOutputDelimiter()
-	//OutputLogger.Println("Nuclei Potential Energy Integrals: ")
-	//printOutputDelimiter()
 	Vn := mol.ElecNuc()
-	//OutputLogger.Println(Vn)
+	InfoLogger.Println("1e integrals done...")
 
-	//printOutputDelimiter()
-	//OutputLogger.Println("2-electron integrals: ")
-	Vee := mol.ElecElec()
-	//OutputLogger.Print(len(Vee))
+	runtime.GC()
+	MyMemDebug()
 
-	//printOutputDelimiter()
-
-	return S, T, Vn, Vee
+	return S, T, Vn
 }
 
 func (atm *Atom) getBasis(data []string, pos int) {

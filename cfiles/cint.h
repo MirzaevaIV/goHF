@@ -4,7 +4,8 @@
  * Parameters and function signature for libcint.
  */
 
-#define CINT_VERSION    5.2.0
+#define CINT_VERSION            "6.1.1"
+#define CINT_SOVERSION          6
 
 /* #undef I8 */
 #ifdef I8
@@ -49,9 +50,8 @@
 #define PTR_COORD       1
 #define NUC_MOD_OF      2
 #define PTR_ZETA        3
-#define PTR_FRAC_CHARGE 3
-#define RESERVE_ATMLOT1 4
-#define RESERVE_ATMLOT2 5
+#define PTR_FRAC_CHARGE 4
+#define RESERVE_ATMSLOT 5
 #define ATM_SLOTS       6
 
 
@@ -171,7 +171,7 @@ typedef struct {
         union {FINT nfk; FINT grids_offset;};
         union {FINT nfl; FINT ngrids;};
         FINT nf;  // = nfi*nfj*nfk*nfl;
-        FINT _padding;
+        FINT rys_order; // = nrys_roots for regular ERIs. can be nrys_roots/2 for SR ERIs
         FINT x_ctr[4];
 
         FINT gbits;
